@@ -6,12 +6,11 @@
 var search = function (nums, target) {
   if (nums.length === 1 && target === nums[0]) return 0;
   if (nums.length === 1 && target !== nums[0]) return -1;
-  nums.sort((a, b) => a - b);
 
   var left = 0;
   var right = nums.length - 1;
 
-  while (right > left) {
+  while (right >= left) {
     var mid = Math.floor((left + right) / 2);
 
     if (nums[mid] === target) {
@@ -25,5 +24,3 @@ var search = function (nums, target) {
 
   return -1;
 };
-
-console.log(search([2, 5], 5));
